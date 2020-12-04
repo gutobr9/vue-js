@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Semaforo</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="container">
+            <semaforo id="semaforo">
+                <template>
+                    <luz :class="[bindFechar?'fechado':'apagado']"></luz>
+                    <luz :class="[bindAtencao?'atencao':'apagado']"></luz>
+                    <luz :class="[bindAbrir?'liberado':'apagado']"></luz>
+                </template>
+            </semaforo>
+            <div class="area-controle">
+                <input @click="abrir" type="button" value="Abrir Semáforo">
+                <input @click="fechar" type="button" value="Fechar Semáforo">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
